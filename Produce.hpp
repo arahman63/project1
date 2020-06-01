@@ -21,7 +21,7 @@ namespace produce_details
 class Produce
 {   
     public:
-      Produce(const std::string& in_file) : mFile(filename){}; //STUBS
+      Produce(const std::string& in_file);
       std::string getName() const;
       double getWeight() const;
       double getPricePerPound() const;
@@ -40,8 +40,6 @@ class Produce
         bool is_pre_packaged;
         int ripeness;
         int condition; 
-        std::ifstream mFile;
-        std::string filename;
         std::string str;
         
 }; // end Produce
