@@ -4,12 +4,12 @@
 
 
 Produce::Produce(const std::string& in_file)
-//member initializers
 {
    std::ifstream theFile;
    theFile.open(in_file);
    if(theFile.fail()) std::cerr<<"File not found";
-       
+   theFile>>name>>weight>>price_per_pound>>is_organic>>is_pre_packaged>>ripeness>>condition;
+
 }
 std::string Produce::getName() const{
     return name;
@@ -44,12 +44,13 @@ std::string Produce::getRipenessStr() const{
         case produce_details::UNDERRIPE: return "underripe";
         case produce_details::RIPE: return "ripe";
     }
-    
+
+   return 0; 
 }
 std::string Produce::getConditionStr() const{
     switch(condition){
         case produce_details::DAMAGED: return "damaged";
         case produce_details::UNDAMAGED: return "undamaged";
     }
-
+   return 0;
 }
