@@ -7,9 +7,9 @@ Produce::Produce(const std::string& in_file)
 {
    std::ifstream theFile;
    theFile.open(in_file);
+   theFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
    if(theFile.fail()) std::cerr<<"File not found";
    theFile>>name>>weight>>price_per_pound>>is_organic>>is_pre_packaged>>ripeness>>condition;
-
 }
 std::string Produce::getName() const{
     return name;
