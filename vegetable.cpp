@@ -11,10 +11,10 @@ Vegetable::Vegetable(const std::string& in_file)
    theFile.open(in_file);
    theFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
    if(theFile.fail()) std::cerr<<"File not found";
-   theFile>>veggie_type;
+   theFile>>veggie_type_;
 }
-std::string Vegetable::getVeggieType(){
-    switch(veggie_type){
+std::string Vegetable::getVeggieType()const{
+    switch(veggie_type_){
         case categories::ALLIUM: return "allium";
         case categories::CRUCIFEROUS: return "cruciferous";
         case categories::EDIBLE_STEM: return "edible_stem";
@@ -23,5 +23,5 @@ std::string Vegetable::getVeggieType(){
         case categories::MARROW: return "marrow";
         case categories::ROOT: return "root";
     }
-
    return 0; 
+}

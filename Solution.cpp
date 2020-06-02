@@ -6,14 +6,17 @@
 
 namespace solution{
     std::string shouldIBuyThis(Produce * product){
-        if(product->getRipenessStr() =="RIPE" && product->getConditionStr()=="UNDAMAGED" || (product->getRipenessStr()=="UNDERRIPE" && product->getConditionStr()=="UNDAMAGED")){
-            return "Yes you should buy this" + product->getName() + "because it is " + product->getRipenessStr() + "and" + product->getConditionStr();
+        std::string productName = product->getName();
+        std::string productRipeness = product->getRipenessStr();
+        std::string productCondition = product->getConditionStr();
+        if(productRipeness =="RIPE" && productCondition=="UNDAMAGED" || (productRipeness=="UNDERRIPE" && productCondition=="UNDAMAGED")){
+            return "Yes you should buy this" + productName + "because it is " + productRipeness + "and" + productCondition;
         }
-        else if(product->getRipenessStr() =="RIPE" && product->getConditionStr()=="DAMAGED" || (product->getRipenessStr()=="UNDERRIPE" && product->getConditionStr()=="DAMAGED")){
-            return "It is not the best idea to buy this" + product->getName() + "because it is " + product->getRipenessStr() + "and" + product->getConditionStr();
+        else if(productRipeness =="RIPE" && productCondition=="DAMAGED" || (productRipeness=="UNDERRIPE" && productCondition=="DAMAGED")){
+            return "It is not the best idea to buy this" + productName + "because it is " + productRipeness + "and" + productCondition;
         }
-        else if(product->getRipenessStr() =="OVERRIPE" && product->getConditionStr()=="UNDAMAGED" || (product->getRipenessStr()=="OVERRIPE" && product->getConditionStr()=="DAMAGED")){
-             return "No you should not buy this" + product->getName() + "because it is " + product->getRipenessStr() + "and" + product->getConditionStr();
+        else if(productRipeness =="OVERRIPE" && productCondition=="UNDAMAGED" || (productRipeness=="OVERRIPE" && productCondition=="DAMAGED")){
+             return "No you should not buy this" + productName + "because it is " + productRipeness + "and" + productCondition;
         }
     }
 }

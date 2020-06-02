@@ -9,37 +9,37 @@ Produce::Produce(const std::string& in_file)
    theFile.open(in_file);
    theFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
    if(theFile.fail()) std::cerr<<"File not found";
-   theFile>>name>>weight>>price_per_pound>>is_organic>>is_pre_packaged>>ripeness>>condition;
+   theFile>>name_>>weight_>>price_per_pound_>>is_organic_>>is_pre_packaged_>>ripeness_>>condition_;
 }
 std::string Produce::getName() const{
-    return name;
+    return name_;
 }
 
 double Produce::getWeight()const{
-    return weight;
+    return weight_;
 }
 double Produce::getPricePerPound()const{
-    return price_per_pound;
+    return price_per_pound_;
 }
 
  bool Produce::getOrganic()const{
-     return is_organic;
+     return is_organic_;
  }
  
  bool Produce::getPrePackaged() const{
 
-     return is_pre_packaged;
+     return is_pre_packaged_;
  }
  int Produce::getRipeness() const{
 
-     return ripeness;
+     return ripeness_;
  }
  int Produce::getCondition() const{
 
-     return condition;
+     return condition_;
 }
 std::string Produce::getRipenessStr() const{
-    switch(ripeness){
+    switch(ripeness_){
         case produce_details::OVERRIPE: return "overripe";
         case produce_details::UNDERRIPE: return "underripe";
         case produce_details::RIPE: return "ripe";
@@ -48,7 +48,7 @@ std::string Produce::getRipenessStr() const{
    return 0; 
 }
 std::string Produce::getConditionStr() const{
-    switch(condition){
+    switch(condition_){
         case produce_details::DAMAGED: return "damaged";
         case produce_details::UNDAMAGED: return "undamaged";
     }

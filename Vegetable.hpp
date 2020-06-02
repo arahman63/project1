@@ -21,10 +21,10 @@ namespace categories
 class Vegetable: public Produce{
     public:
      Vegetable(const std::string &in_file);
-     std::string getVeggieType();
+     std::string getVeggieType() const;
       
     private:
-    int veggie_type;
+    int veggie_type_;// The "_" is a stylistic choice so you know that its a member of a class 
 
 }; //end Vegetable
 #endif
