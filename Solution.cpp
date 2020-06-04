@@ -1,4 +1,3 @@
-#include <iostream>
 #include<bits/stdc++.h> 
 #include "Vegetable.hpp"
 #include "Produce.hpp"
@@ -18,5 +17,6 @@ namespace solution{
         else if(productRipeness =="OVERRIPE" && productCondition=="UNDAMAGED" || (productRipeness=="OVERRIPE" && productCondition=="DAMAGED")){
              return "No you should not buy this" + productName + "because it is " + productRipeness + "and" + productCondition;
         }
+        return "";//remember that a string has to return an empty string, don't "return 0"
     }
 }
